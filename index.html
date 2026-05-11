@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
     <meta charset="UTF-8">
 
     <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0">
 
-    <title>Para Princesa ❤️</title>
+    <title>Para Mi Princesa ❤️</title>
+
+    <!-- FUENTE -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
@@ -15,112 +21,159 @@
 
 <body>
 
-<!-- Fondo -->
+    <!-- PARTICULAS -->
 
-<div class="background"></div>
+    <div class="particles"></div>
 
-<!-- Corazones -->
+    <!-- HERO -->
 
-<div class="hearts"></div>
+    <section class="hero">
 
-<!-- HERO -->
+        <div class="glass">
 
-<section class="hero">
+            <h1 class="title">
+                TE AMO ❤️
+            </h1>
 
-    <h1 class="title">
-        TE AMO ❤️
-    </h1>
+            <p class="subtitle">
+                Eres la persona más especial de mi vida ✨
+            </p>
 
-    <p class="subtitle">
-        Eres la persona más especial de mi vida ✨
-    </p>
-
-    <button id="loveButton">
-        Presiona Aquí 💖
-    </button>
-
-</section>
-
-<!-- CARTA -->
-
-<section
-class="message-box hidden"
-id="messageBox">
-
-    <h2>
-        💌 Para Ti 💌
-    </h2>
-
-    <p>
-        Gracias por existir,
-        por hacer mis días felices,
-        por apoyarme y por llenar
-        mi vida de amor.
-    </p>
-
-    <p>
-        Cada segundo contigo
-        es mágico ✨
-    </p>
-
-</section>
-
-<!-- GALERÍA -->
-
-<section class="gallery">
-
-    <h2>
-        Nuestros Momentos 📸
-    </h2>
-
-    <div class="images">
-
-        <img src="foto1.jpeg"
-        alt="Foto 1">
-
-        <img src="foto2.jpeg"
-        alt="Foto 2">
-
-        <img src="foto3.jpeg"
-        alt="Foto 3">
-
-    </div>
-
-</section>
-
-<!-- LETRAS -->
-
-<section class="lyrics-section">
-
-    <div class="lyrics-container">
-
-        <div id="lyrics">
-
-            ❤️ Nuestra Canción ❤️
+            <button id="loveButton">
+                Presiona Aquí 💖
+            </button>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- CARTA -->
 
-<section class="music-section">
+    <section
+        class="message-box hidden"
+        id="messageBox">
 
-    <audio id="music" controls>
+        <div class="card">
 
-        <source
-        src="heavenly.mp3"
-        type="audio/mpeg">
+            <h2>
+                💌 Para Ti 💌
+            </h2>
 
-        Tu navegador no soporta audio.
+            <p>
+                Gracias por existir,
+                por iluminar mi vida
+                y hacer que cada momento
+                contigo sea mágico.
+            </p>
 
-    </audio>
+            <p>
+                Tu sonrisa es mi lugar favorito ❤️
+            </p>
 
-</section>
+        </div>
 
-<!-- SCRIPT -->
+    </section>
 
-<script src="script.js"></script>
+    <!-- GALERIA -->
+
+    <section class="gallery">
+
+        <h2>
+            Nuestros Momentos 📸
+        </h2>
+
+        <div class="images">
+
+            <div class="image-card">
+                <img src="foto1.jpeg" alt="">
+            </div>
+
+            <div class="image-card">
+                <img src="foto2.jpeg" alt="">
+            </div>
+
+            <div class="image-card">
+                <img src="foto3.jpeg" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MUSICA -->
+
+    <section class="music-section">
+
+        <h2>
+            ❤️ Nuestra Canción ❤️
+        </h2>
+
+        <audio id="music" controls>
+
+            <source src="heavenly.mp3"
+                type="audio/mpeg">
+
+        </audio>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        Hecho con mucho amor ❤️
+
+    </footer>
+
+    <!-- SCRIPT -->
+
+    <script>
+
+        const button =
+            document.getElementById('loveButton');
+
+        const messageBox =
+            document.getElementById('messageBox');
+
+        button.addEventListener('click', () => {
+
+            messageBox.classList.toggle('show');
+
+            createHearts();
+
+        });
+
+        function createHearts() {
+
+            for (let i = 0; i < 40; i++) {
+
+                const heart =
+                    document.createElement("div");
+
+                heart.classList.add("heart");
+
+                heart.innerHTML = "❤️";
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.animationDuration =
+                    Math.random() * 3 + 2 + "s";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+
+                    heart.remove();
+
+                }, 5000);
+
+            }
+
+        }
+
+    </script>
 
 </body>
+
 </html>
